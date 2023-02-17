@@ -22,7 +22,7 @@ def load_sets(path='../data/processed/', val=False):
     np_load_old = np.load
 
 # modify the default parameters of np.load
-    np.load = lambda *a,**k: np_load_old(*a, allow_pickle=True, **k)
+    np.load = lambda *a,**k: np_load_old(*a, allow_pickle=True)
 
     X_train = np.load(f'{path}X_train.npy') if os.path.isfile(f'{path}X_train.npy') else None
     X_val   = np.load(f'{path}X_val.npy'  ) if os.path.isfile(f'{path}X_val.npy')   else None
